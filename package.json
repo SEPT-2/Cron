@@ -1,0 +1,16 @@
+{
+  "name": "cron",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.16.1",
+    "openai": "^4.52.3",
+    "prisma": "^5.16.1"
+  }
+}
