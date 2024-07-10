@@ -15,6 +15,7 @@ async function main() {
 
   if (count <= 0) {
     console.log('No questions to delete');
+    prisma.$disconnect();
     return;
   }
 
@@ -50,7 +51,8 @@ async function main() {
 
 
   console.log('Questions and answers have been updated');
+  prisma.$disconnect();
   return;
 }
 
-await main();
+main().then(() => { process.exit() }).catch(e => { console.error(e); process.exit(1) });
