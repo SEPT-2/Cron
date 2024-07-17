@@ -7,8 +7,8 @@ async function main() {
   const { count } = await prisma.questions.deleteMany({
     where: {
       created_at: {
-        // 1 day ago
-        lt: new Date(Date.now() - 1000 * 60 * 60 * 24)
+        // 2 days ago
+        lt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000)
       }
     }
   })
@@ -50,7 +50,7 @@ async function main() {
   });
 
 
-  console.log('Questions and answers have been updated');
+  console.log(`${count} questions deleted and ${newData.length} new questions added`);
   prisma.$disconnect();
   return;
 }
